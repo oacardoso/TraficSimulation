@@ -15,10 +15,7 @@ agent MyAgent {
 	
 	on Initialize {
 		println("MyAgent spawned")
-		
 		println("My Parameters are :" + occurrence.parameters.toString)
-		
-		killMe
 	}
 
 	
