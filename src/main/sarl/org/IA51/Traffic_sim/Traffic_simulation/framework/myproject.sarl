@@ -1,0 +1,56 @@
+package org.IA51.Traffic_sim.Traffic_simulation.framework.^agent
+
+import io.sarl.core.Logging
+import io.sarl.core.Initialize
+import io.sarl.core.Destroy
+import io.sarl.core.DefaultContextInteractions
+import java.util.Arrays
+import io.sarl.core.Lifecycle
+import io.sarl.core.ExternalContextAccess
+import io.sarl.core.Time
+import io.sarl.core.InnerContextAccess
+import io.sarl.core.Schedules
+
+event MyEvent
+
+agent MyAgent {
+	uses Logging, DefaultContextInteractions, Lifecycle, ExternalContextAccess, Time, InnerContextAccess, Schedules
+
+	on Initialize {
+		var agent1 = spawn(MyAgent2)
+		println("MyAgent spawned")
+		
+		println("My Parameters are :" + occurrence.parameters.toString)		
+		
+	}
+
+	on Destroy{
+		println("My Agent destroyed")
+		killMe
+	}
+
+	on MyEvent {
+		println("Received MyEvent")
+		}
+	def doSomething {
+		var e = new MyEvent
+		emit(e)
+	}
+}
+
+agent MyAgent2 {
+	uses Logging, DefaultContextInteractions, Lifecycle, ExternalContextAccess, Time, InnerContextAccess, Schedules
+
+	on Initialize {
+
+		println("MyAgent2 spawned")
+		
+		println("---DESTROY---")
+		emit(new Destroy)
+	}
+
+	on Destroy {
+		println("My Agent destroyed")
+		killMe
+	}
+}
