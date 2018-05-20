@@ -1,4 +1,4 @@
-package org.IA51.Traffic_sim.Traffic_simulation.framework.agent;
+package org.IA51.Traffic_sim.Traffic_simulation;
 
 import io.sarl.lang.annotation.SarlElementType;
 import io.sarl.lang.annotation.SarlSpecification;
@@ -16,8 +16,8 @@ public class MyEvent extends Event {
   }
   
   @SyntheticMember
-  public MyEvent(final Address source) {
-    super(source);
+  public MyEvent(final Address arg0) {
+    super(arg0);
   }
   
   @SyntheticMember
