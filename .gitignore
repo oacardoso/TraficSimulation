@@ -1,2 +1,4 @@
 src/main/generated-resources/
 README\.md
+
+src/main/generated-sources/sarl/org/IA51/Traffic_sim/Traffic_simulation/framework/
