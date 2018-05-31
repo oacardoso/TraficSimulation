@@ -1,0 +1,29 @@
+/** 
+ * 
+ */
+
+/** 
+ * @author matthieu
+ * 
+ */
+class EnvironmentObject {
+		var length : float
+		var position : Point2f
+		var UID = UUID::randomUUID
+		
+	def getLength() {
+		return this.length
+	}
+
+	def setLength(x : float) {
+		this.length = x
+	}
+
+	def getPosition() : Point2f {
+		return this.position
+	}
+
+	def setPosition(pos : Point2f) {
+		this.position = pos
+	}
+}

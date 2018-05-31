@@ -1,0 +1,11 @@
+
+/** 
+ * @author matthieu
+ * 
+ */
+class Sign extends EnvironmentObject {
+	new (x,y : float) {
+		position = new Point2f(x, y)
+		length = 50
+	}
+}

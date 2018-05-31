@@ -1,0 +1,35 @@
+/** 
+ * 
+ */
+import io.sarl.core.AgentKilled
+import io.sarl.core.AgentSpawned
+import io.sarl.core.ContextJoined
+import io.sarl.core.ContextLeft
+import io.sarl.core.Destroy
+import io.sarl.core.Initialize
+import io.sarl.core.Logging
+import io.sarl.core.MemberJoined
+import io.sarl.core.MemberLeft
+import java.util.Random
+
+
+/** 
+ * @author matthieu
+ * 
+ */
+agent CarAgent {
+
+	uses Lifecycle
+
+	on Initialize {
+	}
+
+	on CarAccident {
+		//event changement de couleur
+		killMe
+	}
+
+	on Perception {
+	}
+	
+}
