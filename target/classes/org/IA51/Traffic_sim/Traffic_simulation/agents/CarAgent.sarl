@@ -1,0 +1,35 @@
+package org.IA51.Traffic_sim.Traffic_simulation.agents
+
+/** 
+ * 
+ */
+
+import io.sarl.core.Initialize
+import io.sarl.core.Lifecycle
+import org.IA51.Traffic_sim.Traffic_simulation.events.CarAccident
+import org.IA51.Traffic_sim.Traffic_simulation.events.Perception
+
+/** 
+ * @author matthieu
+ * 
+ */
+agent CarAgent {
+
+	var car_coulour : int = 0
+	uses Lifecycle
+
+	on Initialize {
+		
+	}
+
+	on CarAccident {
+		// event changement de couleur
+		car_coulour = 1
+		killMe
+	}
+
+	on Perception {
+		
+	}
+
+}
