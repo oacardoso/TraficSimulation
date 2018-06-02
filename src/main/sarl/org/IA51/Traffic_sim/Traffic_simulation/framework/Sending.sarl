@@ -1,0 +1,11 @@
+/** 
+ * 
+ */
+package org.IA51.Traffic_sim.Traffic_simulation.framework
+
+/*
+ * 
+ */
+event CarAccident
+
+event Perception

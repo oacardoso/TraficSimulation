@@ -12,6 +12,7 @@ agent MyAgent {
 	uses DefaultContextInteractions
 
 	on Initialize {
+		setLoggingName("MyAgent")
 		println("MyAgent spawned")
 		println("My Parameters are :" + occurrence.parameters)
 	}

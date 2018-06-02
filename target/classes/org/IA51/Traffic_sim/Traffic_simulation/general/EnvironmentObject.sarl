@@ -1,6 +1,6 @@
-/** 
- * 
- */
+package org.IA51.Traffic_sim.Traffic_simulation.general
+
+import org.IA51.Traffic_sim.Traffic_simulation.labs.Point2f
 
 /** 
  * @author matthieu
@@ -9,7 +9,7 @@
 class EnvironmentObject {
 		var length : float
 		var position : Point2f
-		var UID = UUID::randomUUID
+		var UID = 0//UUID::randomUUID
 		
 	def getLength() {
 		return this.length

@@ -1,0 +1,10 @@
+package org.IA51.Traffic_sim.Traffic_simulation.general
+
+import org.IA51.Traffic_sim.Traffic_simulation.labs.Point2f
+
+class Sign extends EnvironmentObject {
+	new (x : float, y : float) {
+		position = new Point2f(x, y)
+		length = 50
+	}
+}

@@ -1,4 +1,4 @@
-
+package org.IA51.Traffic_sim.Traffic_simulation.labs
 import static extension java.lang.Math.*
 /** 
  * @author matthieu
@@ -8,11 +8,15 @@ class Point2f {
 	
 	var x : int
 	var y : int
+		
+		new(f : float, g : float) {
+			throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		}
 
 	def straightdistance(p1 : Point2f) : float {
 		var dx = this.x - p1.x
 		var dy = this.y - p1.y
-		return sqrt(dx * dx + dy * dy) as float
+		return sqrt(( dx * dx ) + ( dy * dy )) as float
 	}
 
 	def distance(p1 : Point2f) : float {
