@@ -17,6 +17,8 @@ import java.util.UUID;
 import javax.inject.Inject;
 import org.IA51.Traffic_sim.Traffic_simulation.events.CarAccident;
 import org.IA51.Traffic_sim.Traffic_simulation.events.Perception;
+import org.arakhne.afc.gis.road.primitive.RoadConnection;
+import org.arakhne.afc.gis.road.primitive.RoadSegment;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Inline;
 import org.eclipse.xtext.xbase.lib.Pure;
@@ -27,22 +29,35 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SarlSpecification("0.7")
 @SarlElementType(18)
 @SuppressWarnings("all")
-public class CarAgent extends Agent {
-  private int car_coulour = 0;
-  
+public class Driver extends Agent {
   @SyntheticMember
   private void $behaviorUnit$Initialize$0(final Initialize occurrence) {
   }
   
   @SyntheticMember
   private void $behaviorUnit$CarAccident$1(final CarAccident occurrence) {
-    this.car_coulour = 1;
     Lifecycle _$CAPACITY_USE$IO_SARL_CORE_LIFECYCLE$CALLER = this.$castSkill(Lifecycle.class, (this.$CAPACITY_USE$IO_SARL_CORE_LIFECYCLE == null || this.$CAPACITY_USE$IO_SARL_CORE_LIFECYCLE.get() == null) ? (this.$CAPACITY_USE$IO_SARL_CORE_LIFECYCLE = this.$getSkill(Lifecycle.class)) : this.$CAPACITY_USE$IO_SARL_CORE_LIFECYCLE);
     _$CAPACITY_USE$IO_SARL_CORE_LIFECYCLE$CALLER.killMe();
   }
   
   @SyntheticMember
   private void $behaviorUnit$Perception$2(final Perception occurrence) {
+  }
+  
+  protected Object computePerception(final RoadConnection entryPoint, final RoadSegment segment, final double distanceFromEntryPoint, final double perceptionDistance, final /* Collection<EnvironnmentObject> */Object percepts, final /* set<RoadSegment> */Object treatedSegments) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nEnvironnementObject cannot be resolved to a type."
+      + "\nThe method or field getObjectsFromStart is undefined for the type RoadSegment"
+      + "\nThe method or field getObjectsFromEnd is undefined for the type RoadSegment"
+      + "\nThe method getOverSide(RoadConnection) is undefined for the type RoadSegment"
+      + "\nThe method or field otherSide is undefined"
+      + "\nVoid functions cannot return a value."
+      + "\nThe method computePerception(RoadConnection, RoadSegment, double, double, Collection<EnvironnmentObject>, set) from the type Driver refers to the missing type EnvironnmentObject"
+      + "\ncontains cannot be resolved"
+      + "\n+= cannot be resolved"
+      + "\ngetDistanceTo cannot be resolved"
+      + "\n> cannot be resolved"
+      + "\nsegments cannot be resolved");
   }
   
   @Extension
@@ -84,47 +99,21 @@ public class CarAgent extends Agent {
     ___SARLlocal_runnableCollection.add(() -> $behaviorUnit$Perception$2(occurrence));
   }
   
-  @Override
-  @Pure
   @SyntheticMember
-  public boolean equals(final Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    CarAgent other = (CarAgent) obj;
-    if (other.car_coulour != this.car_coulour)
-      return false;
-    return super.equals(obj);
-  }
-  
-  @Override
-  @Pure
-  @SyntheticMember
-  public int hashCode() {
-    int result = super.hashCode();
-    final int prime = 31;
-    result = prime * result + this.car_coulour;
-    return result;
-  }
-  
-  @SyntheticMember
-  public CarAgent(final UUID parentID, final UUID agentID) {
+  public Driver(final UUID parentID, final UUID agentID) {
     super(parentID, agentID);
   }
   
   @SyntheticMember
   @Inject
   @Deprecated
-  public CarAgent(final BuiltinCapacitiesProvider provider, final UUID parentID, final UUID agentID) {
+  public Driver(final BuiltinCapacitiesProvider provider, final UUID parentID, final UUID agentID) {
     super(provider, parentID, agentID);
   }
   
   @SyntheticMember
   @Inject
-  public CarAgent(final UUID parentID, final UUID agentID, final DynamicSkillProvider skillProvider) {
+  public Driver(final UUID parentID, final UUID agentID, final DynamicSkillProvider skillProvider) {
     super(parentID, agentID, skillProvider);
   }
 }

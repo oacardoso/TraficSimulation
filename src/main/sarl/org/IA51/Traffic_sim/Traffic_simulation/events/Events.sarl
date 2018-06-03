@@ -5,4 +5,6 @@ package org.IA51.Traffic_sim.Traffic_simulation.events
  */
 event CarAccident
 
-event Perception
+event Perception{
+	
+}
