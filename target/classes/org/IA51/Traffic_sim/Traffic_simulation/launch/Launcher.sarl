@@ -6,8 +6,7 @@ import io.sarl.core.Destroy
 import io.sarl.core.Initialize
 import io.sarl.core.Logging
 import io.sarl.core.Lifecycle
-import org.IA51.Traffic_sim.Traffic_simulation.agents.CarAgent
-
+import org.IA51.Traffic_sim.Traffic_simulation.agents.Driver
 /** 
  * @author User
  * 
@@ -22,7 +21,7 @@ agent Launcher {
 		// You should put all the initialization statements in this block of code.
 		setLoggingName("Launcher")
 		info('Spawning a Car')
-		spawn(CarAgent)
+		spawn(Driver)
 		killMe
 	}
 

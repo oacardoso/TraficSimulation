@@ -1,0 +1,56 @@
+package org.IA51.Traffic_sim.Traffic_simulation.agents
+
+/** 
+ * 
+ */
+
+import io.sarl.core.Initialize
+import io.sarl.core.Lifecycle
+import org.IA51.Traffic_sim.Traffic_simulation.events.CarAccident
+import org.IA51.Traffic_sim.Traffic_simulation.events.Perception
+import org.IA51.Traffic_sim.Traffic_simulation.environnement.EnvironmentObject
+import org.arakhne.afc.gis.road.primitive.RoadConnection
+import org.arakhne.afc.gis.road.primitive.RoadSegment
+import java.util.Collection
+
+
+agent Driver {		
+	uses Lifecycle
+
+	on Initialize {
+		
+	}
+
+	on CarAccident {
+		// event changement de couleur
+		killMe
+	}
+
+	on Perception {
+		
+	}
+	def computePerception(entryPoint : RoadConnection, segment : RoadSegment, distanceFromEntryPoint : double, perceptionDistance : double, percepts : Collection<EnvironmentObject>, treatedSegments : Set<RoadSegment>)
+	{
+		if(treatedSegments.contains(segment)){
+			return
+		}
+		treatedSegments += segment
+		var objs : Iterable<EnvironmentObject>
+		if (entryPoint === segment.beginPoint){
+			objs = segment.getObjectsFromStart
+		}
+		else{
+			objs = segment.getObjectsFromEnd
+		}
+		for(obj:objs){
+			if (obj.getDistanceTo(entryPoint) > distanceFromEntryPoint){
+				percepts += obj
+			}
+		}
+	var otherside = segment.getOverSide(entryPoint)
+	for(seg:otherside.segments){
+		var d = segment.length - distanceFromEntryPoint
+		computePerception(otherside, seg, 0, Math::min(0,perceptionDistance-d), percepts, treatedSegments)
+	}
+	}
+}
