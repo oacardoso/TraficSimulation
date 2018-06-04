@@ -11,6 +11,7 @@ import org.IA51.Traffic_sim.Traffic_simulation.events.Perception
 import org.arakhne.afc.gis.road.primitive.RoadConnection
 import org.arakhne.afc.gis.road.primitive.RoadSegment
 import java.util.Collection
+import org.IA51.Traffic_sim.Traffic_simulation.environnement.EnvironmentObject
 
 /** 
  * @author matthieu
@@ -31,13 +32,13 @@ agent Driver {
 	on Perception {
 		
 	}
-	def computePerception (entryPoint : RoadConnection, segment:RoadSegment, distanceFromEntryPoint : double, perceptionDistance : double , percepts : Collection <EnvironnmentObject> , treatedSegments : set<RoadSegment>)
+	def computePerception (entryPoint : RoadConnection, segment:RoadSegment, distanceFromEntryPoint : double, perceptionDistance : double , percepts : Collection <EnvironnmentObject> , treatedSegments : Set<RoadSegment>)
 	{
 		if(treatedSegments.contains(segment)){
 			return
 		}
 		treatedSegments += segment
-		var objs:Iterable<EnvironnementObject>
+		var objs : Iterable<EnvironmentObject>
 		if (entryPoint === segment.beginPoint){
 			objs = segment.getObjectsFromStart
 		}
@@ -52,7 +53,7 @@ agent Driver {
 	var otherside = segment.getOverSide(entryPoint)
 	for(seg:otherside.segments){
 		var d = segment.length - distanceFromEntryPoint
-		return computePerception(otherSide,seg, 0,Math::min(0,perceptionDistance-d), percepts, treatedSegments)
+		computePerception(otherside, seg, 0, Math::min(0, perceptionDistance - d), percepts, treatedSegments)
 	}
 }
 }

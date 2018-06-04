@@ -44,18 +44,15 @@ public class Driver extends Agent {
   private void $behaviorUnit$Perception$2(final Perception occurrence) {
   }
   
-  protected Object computePerception(final RoadConnection entryPoint, final RoadSegment segment, final double distanceFromEntryPoint, final double perceptionDistance, final /* Collection<EnvironnmentObject> */Object percepts, final /* set<RoadSegment> */Object treatedSegments) {
+  protected Object computePerception(final RoadConnection entryPoint, final RoadSegment segment, final double distanceFromEntryPoint, final double perceptionDistance, final /* Collection<EnvironnmentObject> */Object percepts, final /* Set<RoadSegment> */Object treatedSegments) {
     throw new Error("Unresolved compilation problems:"
-      + "\nEnvironnementObject cannot be resolved to a type."
       + "\nThe method or field getObjectsFromStart is undefined for the type RoadSegment"
       + "\nThe method or field getObjectsFromEnd is undefined for the type RoadSegment"
+      + "\nThe method getDistanceTo(RoadConnection) is undefined for the type EnvironmentObject"
       + "\nThe method getOverSide(RoadConnection) is undefined for the type RoadSegment"
-      + "\nThe method or field otherSide is undefined"
-      + "\nVoid functions cannot return a value."
-      + "\nThe method computePerception(RoadConnection, RoadSegment, double, double, Collection<EnvironnmentObject>, set) from the type Driver refers to the missing type EnvironnmentObject"
+      + "\nThe method computePerception(RoadConnection, RoadSegment, double, double, Collection<EnvironnmentObject>, Set) from the type Driver refers to the missing type EnvironnmentObject"
       + "\ncontains cannot be resolved"
       + "\n+= cannot be resolved"
-      + "\ngetDistanceTo cannot be resolved"
       + "\n> cannot be resolved"
       + "\nsegments cannot be resolved");
   }
