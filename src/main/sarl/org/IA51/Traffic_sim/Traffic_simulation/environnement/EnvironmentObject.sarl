@@ -1,6 +1,8 @@
 package org.IA51.Traffic_sim.Traffic_simulation.environnement
 
 import org.IA51.Traffic_sim.Traffic_simulation.objects.Point2f
+import org.arakhne.afc.gis.road.primitive.RoadConnection
+import org.arakhne.afc.math.geometry.d2.d.Point2d
 
 /** 
  * @author matthieu
@@ -23,7 +25,17 @@ class EnvironmentObject {
 		return this.position
 	}
 
+	def getPosition2d() : Point2d {
+		return this.position.
+	}
+
 	def setPosition(pos : Point2f) {
 		this.position = pos
 	}
+	
+	def getDistanceTo(point : RoadConnection){
+		return this.getPosition.distance(point.point)
+		
+	}
+	
 }

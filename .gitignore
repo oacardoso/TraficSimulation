@@ -12,3 +12,9 @@ target/classes/org/IA51/Traffic_sim/Traffic_simulation/environnement/
 target/classes/org/IA51/Traffic_sim/Traffic_simulation/objects/
 
 src/main/generated-sources/sarl/org/IA51/Traffic_sim/Traffic_simulation/objects/
+
+src/main/generated-sources/sarl/org/IA51/Traffic_sim/Traffic_simulation/agents/
+
+src/main/sarl/org/IA51/Traffic_sim/Traffic_simulation/agents/
+
+target/classes/org/IA51/Traffic_sim/Traffic_simulation/agents/
