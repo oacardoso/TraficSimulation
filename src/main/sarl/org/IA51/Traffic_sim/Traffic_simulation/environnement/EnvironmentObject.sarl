@@ -1,40 +1,30 @@
 package org.IA51.Traffic_sim.Traffic_simulation.environnement
 
-import org.IA51.Traffic_sim.Traffic_simulation.objects.Point2f
 import org.arakhne.afc.gis.road.primitive.RoadConnection
 import org.arakhne.afc.math.geometry.d2.d.Point2d
+import java.awt.geom.Point2D
+import org.arakhne.afc.gis.road.primitive.RoadSegment
+import java.util.UUID
 
-/** 
- * @author matthieu
- * 
- */
 class EnvironmentObject {
 		var length : float
-		var position : Point2f
-		var UID = 0 //UUID::randomUUID
+		var position : float
+		var entryPoint : RoadConnection 
+		var UID : UUID
+		var segment : RoadSegment
 		
 	def getLength() {
 		return this.length
 	}
-
 	def setLength(x : float) {
 		this.length = x
 	}
 
-	def getPosition() : Point2f {
+	def getPosition() : float {
 		return this.position
 	}
-
-	def getPosition2d() : Point2d {
-		return this.position.
-	}
-
-	def setPosition(pos : Point2f) {
-		this.position = pos
-	}
-	
-	def getDistanceTo(point : RoadConnection){
-		return this.getPosition.distance(point.point)
+	def getDistanceFrom(): Point2d{
+		return this.segment.getGeoLocationForDistance(this.position)
 		
 	}
 	

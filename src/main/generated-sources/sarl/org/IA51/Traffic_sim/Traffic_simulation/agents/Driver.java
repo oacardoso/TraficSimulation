@@ -13,6 +13,7 @@ import io.sarl.lang.core.DynamicSkillProvider;
 import io.sarl.lang.core.Skill;
 import io.sarl.lang.util.ClearableReference;
 import java.util.Collection;
+import java.util.Set;
 import java.util.UUID;
 import javax.inject.Inject;
 import org.IA51.Traffic_sim.Traffic_simulation.environnement.EnvironmentObject;
@@ -30,6 +31,7 @@ import org.eclipse.xtext.xbase.lib.Pure;
 public class Driver extends Agent {
   @SyntheticMember
   private void $behaviorUnit$Initialize$0(final Initialize occurrence) {
+    EnvironmentObject obj = new EnvironmentObject();
   }
   
   @SyntheticMember
@@ -42,15 +44,41 @@ public class Driver extends Agent {
   private void $behaviorUnit$Perception$2(final Perception occurrence) {
   }
   
-  protected Object computePerception(final RoadConnection entryPoint, final RoadSegment segment, final double distanceFromEntryPoint, final double perceptionDistance, final Collection<EnvironmentObject> percepts, final /* Set<RoadSegment> */Object treatedSegments) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field getObjectsFromStart is undefined for the type RoadSegment"
-      + "\nThe method or field getObjectsFromEnd is undefined for the type RoadSegment"
-      + "\nThe method getOverSide(RoadConnection) is undefined for the type RoadSegment"
-      + "\nThe method computePerception(RoadConnection, RoadSegment, double, double, Collection<EnvironmentObject>, Set) from the type Driver refers to the missing type Set"
-      + "\ncontains cannot be resolved"
-      + "\n+= cannot be resolved"
-      + "\nsegments cannot be resolved");
+  protected Object computePerception(final RoadConnection entryPoint, final RoadSegment segment, final double distanceFromEntryPoint, final double perceptionDistance, final Collection<EnvironmentObject> percepts, final Set<RoadSegment> treatedSegments) {
+    boolean _contains = treatedSegments.contains(segment);
+    if (_contains) {
+    }
+    treatedSegments.add(segment);
+    Iterable<EnvironmentObject> objs = null;
+    RoadConnection _beginPoint = segment.getBeginPoint();
+    boolean _tripleEquals = (entryPoint == _beginPoint);
+    if (_tripleEquals) {
+      objs = this.getObjectsFromStart(segment);
+    } else {
+      objs = this.getObjectsFromEnd(segment);
+    }
+    for (final EnvironmentObject obj : objs) {
+    }
+    RoadConnection otherside = segment.getOtherSidePoint(entryPoint);
+    Iterable<RoadSegment> _connectedSegments = otherside.getConnectedSegments();
+    for (final RoadSegment seg : _connectedSegments) {
+      {
+        double _length = segment.getLength();
+        double d = (_length - distanceFromEntryPoint);
+        this.computePerception(otherside, seg, 0, Math.min(0, (perceptionDistance - d)), percepts, treatedSegments);
+      }
+    }
+    return null;
+  }
+  
+  @Pure
+  protected Iterable<EnvironmentObject> getObjectsFromStart(final RoadSegment segment) {
+    return null;
+  }
+  
+  @Pure
+  protected Iterable<EnvironmentObject> getObjectsFromEnd(final RoadSegment segment) {
+    return null;
   }
   
   @Extension
