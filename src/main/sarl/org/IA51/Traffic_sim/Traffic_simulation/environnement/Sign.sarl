@@ -1,0 +1,9 @@
+package org.IA51.Traffic_sim.Traffic_simulation.environnement
+
+import org.arakhne.afc.math.geometry.d2.Point2D
+
+class Sign extends EnvironmentObject {
+	
+	var position : Point2D
+	
+}
