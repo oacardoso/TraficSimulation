@@ -1,0 +1,21 @@
+package environnement
+
+import java.util.UUID
+
+/** 
+ * @author matthieu
+ * 
+ */
+class StopPanel extends Sign {
+
+	var UID : UUID
+
+	def get_UID() : UUID {
+		return this.UID
+	}
+
+	def set_UID(UID : UUID) {
+		this.UID = UID
+	}
+
+}
