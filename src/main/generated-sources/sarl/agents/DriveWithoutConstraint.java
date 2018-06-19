@@ -13,9 +13,9 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SuppressWarnings("all")
 public class DriveWithoutConstraint {
   @Pure
-  public float run(final int maxacc, final int currentacc, final int currentspeed, final int speedlimit) {
+  public float run(final float maxacc, final float currentacc, final int currentspeed, final int speedlimit) {
     float acc = 0;
-    int accel = 0;
+    float accel = 0;
     if ((currentspeed > speedlimit)) {
       acc = (currentacc * (speedlimit / currentspeed));
     } else {
