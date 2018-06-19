@@ -11,7 +11,7 @@ import org.arakhne.afc.gis.maplayer.ArrayMapElementLayer
 import org.arakhne.afc.gis.mapelement.MapPolygon
 import org.arakhne.afc.gis.mapelement.MapElement
 import java.io.File
-
+import Java.Layer
 
 agent ApplicationAgent {
 
@@ -42,8 +42,8 @@ class App extends javafx.application.Application {
 
 	}
 
-	def start(arg0 : Stage) throws Exception {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	def start(arg0 : Stage) {
+		
 	}
 
 }

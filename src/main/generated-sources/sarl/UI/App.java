@@ -22,12 +22,10 @@ public class App extends Application {
   
   public void init() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field Layer is undefined"
-      + "\nloadShapeFile cannot be resolved");
+      + "\nThe method loadShapeFile(File) is not visible");
   }
   
-  public void start(final Stage arg0) throws Exception {
-    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  public void start(final Stage arg0) {
   }
   
   @Override
