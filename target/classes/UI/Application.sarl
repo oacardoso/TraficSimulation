@@ -11,39 +11,80 @@ import org.arakhne.afc.gis.maplayer.ArrayMapElementLayer
 import org.arakhne.afc.gis.mapelement.MapPolygon
 import org.arakhne.afc.gis.mapelement.MapElement
 import java.io.File
+import ^Java.Layer
+import javafx.scene.layout.BorderPane
+import javafx.scene.Scene
+import java.util.ArrayList
 
-
-agent ApplicationAgent {
+agent AppAgent {
 
 	uses Lifecycle
 	
 	uses Logging
 	
 	on Initialize {
-
+		App.launch(App);
+		App.inst.init
+		App.inst.start(new Stage())
+		info("Ok")
  	}
 }
 
 class App extends javafx.application.Application {
 
+	var agentBodyLayer = new ArrayMapElementLayer<MapPolygon>;
+	var stopLayer = new ArrayMapElementLayer<MapPolygon>;
+	var flashlightLayer = new ArrayMapElementLayer<MapPolygon>;
+	var isReady = false;
+	
 	static var inst : App;
-
 	var roadNetworkLayer : MapElementLayer<?>
 
 	new() {
-
 		inst = this;
-
 	}
 
 	def init() {
-
-		roadNetworkLayer = Layer.loadShapeFile(new File("Quartier.shp"))
-
+		roadNetworkLayer = Layer.loadShapeFile(new File("src/main/sarl/UI/Quartier.shp"))
 	}
 
-	def start(arg0 : Stage) throws Exception {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	def start(stage : Stage) {
+		var root = new BorderPane()
+		var scene = new Scene(root, 1024, 768)
+		var containers = new ArrayList<MapElementLayer>
+		if (roadNetworkLayer != null) {
+			containers.add(roadNetworkLayer)
+		}
+		containers.add(agentBodyLayer);
+		containers.add(stopLayer);
+		containers.add(flashlightLayer);
+		
+		var container : GISContainer;
+		var layer : MultiMapLayer;
+		if (containers.size() == 1) {
+			container = containers.get(0);
+		} else {
+			layer = new MultiMapLayer;
+			for (child : containers) {
+				layer.addMapLayer(child);
+			}
+			container = layer;
+		}
+
+		var scrollPane = new ZoomablePane(container)
+		root.setCenter(scrollPane);
+
+		stage.setTitle("Traffic simulation !");
+		stage.setScene(scene);
+		isReady = true
+
+		stage.show();
+	}
+
+	static def getInst() : App {
+		if (inst == null)
+			inst = new App
+		return inst;
 	}
 
 }

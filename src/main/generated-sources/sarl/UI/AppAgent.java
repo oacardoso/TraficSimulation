@@ -1,5 +1,6 @@
 package UI;
 
+import UI.App;
 import io.sarl.core.Initialize;
 import io.sarl.core.Lifecycle;
 import io.sarl.core.Logging;
@@ -15,6 +16,7 @@ import io.sarl.lang.core.Skill;
 import io.sarl.lang.util.ClearableReference;
 import java.util.Collection;
 import java.util.UUID;
+import javafx.stage.Stage;
 import javax.inject.Inject;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Inline;
@@ -23,9 +25,15 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SarlSpecification("0.7")
 @SarlElementType(18)
 @SuppressWarnings("all")
-public class ApplicationAgent extends Agent {
+public class AppAgent extends Agent {
   @SyntheticMember
   private void $behaviorUnit$Initialize$0(final Initialize occurrence) {
+    App.launch(App.class);
+    App.getInst().init();
+    Stage _stage = new Stage();
+    App.getInst().start(_stage);
+    Logging _$CAPACITY_USE$IO_SARL_CORE_LOGGING$CALLER = this.$castSkill(Logging.class, (this.$CAPACITY_USE$IO_SARL_CORE_LOGGING == null || this.$CAPACITY_USE$IO_SARL_CORE_LOGGING.get() == null) ? (this.$CAPACITY_USE$IO_SARL_CORE_LOGGING = this.$getSkill(Logging.class)) : this.$CAPACITY_USE$IO_SARL_CORE_LOGGING);
+    _$CAPACITY_USE$IO_SARL_CORE_LOGGING$CALLER.info("Ok");
   }
   
   @Extension
@@ -67,20 +75,20 @@ public class ApplicationAgent extends Agent {
   }
   
   @SyntheticMember
-  public ApplicationAgent(final UUID parentID, final UUID agentID) {
+  public AppAgent(final UUID parentID, final UUID agentID) {
     super(parentID, agentID);
   }
   
   @SyntheticMember
   @Inject
   @Deprecated
-  public ApplicationAgent(final BuiltinCapacitiesProvider provider, final UUID parentID, final UUID agentID) {
+  public AppAgent(final BuiltinCapacitiesProvider provider, final UUID parentID, final UUID agentID) {
     super(provider, parentID, agentID);
   }
   
   @SyntheticMember
   @Inject
-  public ApplicationAgent(final UUID parentID, final UUID agentID, final DynamicSkillProvider skillProvider) {
+  public AppAgent(final UUID parentID, final UUID agentID, final DynamicSkillProvider skillProvider) {
     super(parentID, agentID, skillProvider);
   }
 }
