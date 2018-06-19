@@ -24,11 +24,11 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SarlElementType(10)
 @SuppressWarnings("all")
 public class App extends Application {
-  private ArrayMapElementLayer<MapPolygon> agentBodyLayer = new ArrayMapElementLayer<MapPolygon>();
+  private ArrayMapElementLayer<MapPolygon> CarLayer = new ArrayMapElementLayer<MapPolygon>();
   
-  private ArrayMapElementLayer<MapPolygon> stopLayer = new ArrayMapElementLayer<MapPolygon>();
+  private ArrayMapElementLayer<MapPolygon> StopLayer = new ArrayMapElementLayer<MapPolygon>();
   
-  private ArrayMapElementLayer<MapPolygon> flashlightLayer = new ArrayMapElementLayer<MapPolygon>();
+  private ArrayMapElementLayer<MapPolygon> TrafficLightLayer = new ArrayMapElementLayer<MapPolygon>();
   
   private boolean isReady = false;
   
@@ -53,9 +53,9 @@ public class App extends Application {
     if (_notEquals) {
       containers.add(this.roadNetworkLayer);
     }
-    containers.add(this.agentBodyLayer);
-    containers.add(this.stopLayer);
-    containers.add(this.flashlightLayer);
+    containers.add(this.CarLayer);
+    containers.add(this.StopLayer);
+    containers.add(this.TrafficLightLayer);
     GISContainer container = null;
     MultiMapLayer layer = null;
     int _size = containers.size();

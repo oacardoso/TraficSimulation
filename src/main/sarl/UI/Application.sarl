@@ -31,9 +31,9 @@ agent AppAgent {
 
 class App extends javafx.application.Application {
 
-	var agentBodyLayer = new ArrayMapElementLayer<MapPolygon>;
-	var stopLayer = new ArrayMapElementLayer<MapPolygon>;
-	var flashlightLayer = new ArrayMapElementLayer<MapPolygon>;
+	var CarLayer = new ArrayMapElementLayer<MapPolygon>;
+	var StopLayer = new ArrayMapElementLayer<MapPolygon>;
+	var TrafficLightLayer = new ArrayMapElementLayer<MapPolygon>;
 	var isReady = false;
 	
 	static var inst : App;
@@ -54,9 +54,9 @@ class App extends javafx.application.Application {
 		if (roadNetworkLayer != null) {
 			containers.add(roadNetworkLayer)
 		}
-		containers.add(agentBodyLayer);
-		containers.add(stopLayer);
-		containers.add(flashlightLayer);
+		containers.add(CarLayer);
+		containers.add(StopLayer);
+		containers.add(TrafficLightLayer);
 		
 		var container : GISContainer;
 		var layer : MultiMapLayer;
