@@ -7,7 +7,6 @@ import io.sarl.core.Initialize
 import io.sarl.core.Logging
 import io.sarl.core.Lifecycle
 import agents.Driver
-import UI.Layer
 /** 
  * @author User
  * 
