@@ -16,7 +16,6 @@ import UI.Layer
 agent Launcher {
 	uses Logging
 	uses Lifecycle
-	var map : Layer
 	
 	on Initialize {
 		// Event trigger before the agent begin to live or to be used.

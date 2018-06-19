@@ -1,5 +1,6 @@
 package UI;
 
+
 /*
  * $Id$
  * This file is a part of the Arakhne Foundation Classes, http://www.arakhne.org/afc
