@@ -1,0 +1,49 @@
+package UI
+
+import io.sarl.core.*
+import javafx.stage.Stage
+import org.arakhne.afc.gis.primitive.GISContainer
+import org.arakhne.afc.gis.maplayer.MapElementLayer
+import org.arakhne.afc.gis.maplayer.MultiMapLayer
+import org.arakhne.afc.nodefx.ZoomablePane
+import org.arakhne.afc.gis.mapelement.MapCircle
+import org.arakhne.afc.gis.maplayer.ArrayMapElementLayer
+import org.arakhne.afc.gis.mapelement.MapPolygon
+import org.arakhne.afc.gis.mapelement.MapElement
+import java.io.File
+
+
+agent ApplicationAgent {
+
+	uses Lifecycle
+	
+	uses Logging
+	
+	on Initialize {
+
+ 	}
+}
+
+class App extends javafx.application.Application {
+
+	static var inst : App;
+
+	var roadNetworkLayer : MapElementLayer<?>
+
+	new() {
+
+		inst = this;
+
+	}
+
+	def init() {
+
+		roadNetworkLayer = Layer.loadShapeFile(new File("Quartier.shp"))
+
+	}
+
+	def start(arg0 : Stage) throws Exception {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+
+}
