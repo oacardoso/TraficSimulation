@@ -22,7 +22,8 @@ public class App extends Application {
   
   public void init() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method loadShapeFile(File) is not visible");
+      + "\nThe method or field Layer is undefined"
+      + "\nloadShapeFile cannot be resolved");
   }
   
   public void start(final Stage arg0) throws Exception {
