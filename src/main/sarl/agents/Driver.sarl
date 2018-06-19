@@ -1,0 +1,29 @@
+package agents
+
+/** 
+ * 
+ */
+	
+import io.sarl.core.Initialize
+import io.sarl.core.Lifecycle
+import events.CarAccident
+import events.Perception
+import environnement.EnvironmentObjecAbstract
+import java.util.ArrayList
+
+agent Driver {		
+	uses Lifecycle
+	var pecepts : ArrayList<EnvironmentObjecAbstract>
+//	var seeking : new Conduitesansobstacle()
+	on Initialize {
+		
+	}
+
+	on CarAccident {
+		killMe
+	}
+
+	on Perception {
+	}
+
+}

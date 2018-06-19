@@ -1,0 +1,13 @@
+package environnement
+
+import java.awt.Color
+import java.util.Timer
+
+/** 
+ * @author matthieu
+ * 
+ */
+class TrafficLight extends Sign{
+	var color : Color
+	var timer = new Timer()
+}

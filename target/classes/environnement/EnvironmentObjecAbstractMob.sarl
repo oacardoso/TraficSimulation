@@ -1,0 +1,13 @@
+/** 
+ * 
+ */
+package environnement
+
+
+/** 
+ * @author User
+ * 
+ */
+class EnvironmentObjecAbstractMob extends EnvironmentObjecAbstract {
+
+}

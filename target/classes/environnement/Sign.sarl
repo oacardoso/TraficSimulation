@@ -1,0 +1,9 @@
+package environnement
+
+import org.arakhne.afc.math.geometry.d2.Point2D
+
+class Sign extends EnvironmentObjecAbstract {
+	
+	var position : Point2D
+	
+}

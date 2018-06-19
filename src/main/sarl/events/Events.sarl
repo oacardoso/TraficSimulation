@@ -1,0 +1,10 @@
+package events
+
+/*
+ * A car accident happends
+ */
+event CarAccident
+
+event Perception{
+	
+}

@@ -1,0 +1,31 @@
+package environnement
+
+import org.arakhne.afc.gis.road.primitive.RoadConnection
+import org.arakhne.afc.math.geometry.d2.d.Point2d
+import java.awt.geom.Point2D
+import org.arakhne.afc.gis.road.primitive.RoadSegment
+import java.util.UUID
+
+class EnvironmentObjecAbstract {
+		var length : float
+		var position : float
+		var entryPoint : RoadConnection 
+		var UID : UUID
+		var segment : RoadSegment
+		
+	def getLength() {
+		return this.length
+	}
+	def setLength(x : float) {
+		this.length = x
+	}
+
+	def getPosition() : float {
+		return this.position
+	}
+	def getDistanceFrom(): Point2d{
+		return this.segment.getGeoLocationForDistance(this.position)
+		
+	}
+	
+}
