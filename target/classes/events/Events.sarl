@@ -5,6 +5,6 @@ package events
  */
 event CarAccident
 
-event Perception{
-	
-}
+event ComputeInfluence
+
+event SendInfluence

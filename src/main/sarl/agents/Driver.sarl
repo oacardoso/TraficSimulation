@@ -3,19 +3,23 @@ package agents
 /** 
  * 
  */
-	
 import io.sarl.core.Initialize
+import io.sarl.core.Logging
 import io.sarl.core.Lifecycle
 import events.CarAccident
-import events.Perception
+import events.ComputeInfluence
 import environnement.EnvironmentObjecAbstractStat
 import java.util.ArrayList
 
 agent Driver {		
 	uses Lifecycle
+	uses Logging
+	
 	var pecepts : ArrayList<EnvironmentObjecAbstractStat>
 //	var seeking : new Conduitesansobstacle()
+
 	on Initialize {
+		info("Driver spawned !")
 		
 	}
 
@@ -23,7 +27,7 @@ agent Driver {
 		killMe
 	}
 
-	on Perception {
+	on ComputeInfluence {
 	}
 
 }

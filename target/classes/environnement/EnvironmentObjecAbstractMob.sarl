@@ -9,5 +9,5 @@ package environnement
  * 
  */
 class EnvironmentObjecAbstractMob extends EnvironmentObjecAbstractStat {
-
+	
 }

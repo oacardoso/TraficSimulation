@@ -2,9 +2,10 @@ package agents;
 
 import environnement.EnvironmentObjecAbstractStat;
 import events.CarAccident;
-import events.Perception;
+import events.ComputeInfluence;
 import io.sarl.core.Initialize;
 import io.sarl.core.Lifecycle;
+import io.sarl.core.Logging;
 import io.sarl.lang.annotation.ImportedCapacityFeature;
 import io.sarl.lang.annotation.PerceptGuardEvaluator;
 import io.sarl.lang.annotation.SarlElementType;
@@ -31,6 +32,8 @@ public class Driver extends Agent {
   
   @SyntheticMember
   private void $behaviorUnit$Initialize$0(final Initialize occurrence) {
+    Logging _$CAPACITY_USE$IO_SARL_CORE_LOGGING$CALLER = this.$castSkill(Logging.class, (this.$CAPACITY_USE$IO_SARL_CORE_LOGGING == null || this.$CAPACITY_USE$IO_SARL_CORE_LOGGING.get() == null) ? (this.$CAPACITY_USE$IO_SARL_CORE_LOGGING = this.$getSkill(Logging.class)) : this.$CAPACITY_USE$IO_SARL_CORE_LOGGING);
+    _$CAPACITY_USE$IO_SARL_CORE_LOGGING$CALLER.info("Driver spawned !");
   }
   
   @SyntheticMember
@@ -40,7 +43,7 @@ public class Driver extends Agent {
   }
   
   @SyntheticMember
-  private void $behaviorUnit$Perception$2(final Perception occurrence) {
+  private void $behaviorUnit$ComputeInfluence$2(final ComputeInfluence occurrence) {
   }
   
   @Extension
@@ -58,6 +61,21 @@ public class Driver extends Agent {
     return $castSkill(Lifecycle.class, this.$CAPACITY_USE$IO_SARL_CORE_LIFECYCLE);
   }
   
+  @Extension
+  @ImportedCapacityFeature(Logging.class)
+  @SyntheticMember
+  private transient ClearableReference<Skill> $CAPACITY_USE$IO_SARL_CORE_LOGGING;
+  
+  @SyntheticMember
+  @Pure
+  @Inline(value = "$castSkill(Logging.class, ($0$CAPACITY_USE$IO_SARL_CORE_LOGGING == null || $0$CAPACITY_USE$IO_SARL_CORE_LOGGING.get() == null) ? ($0$CAPACITY_USE$IO_SARL_CORE_LOGGING = $0$getSkill(Logging.class)) : $0$CAPACITY_USE$IO_SARL_CORE_LOGGING)", imported = Logging.class)
+  private Logging $CAPACITY_USE$IO_SARL_CORE_LOGGING$CALLER() {
+    if (this.$CAPACITY_USE$IO_SARL_CORE_LOGGING == null || this.$CAPACITY_USE$IO_SARL_CORE_LOGGING.get() == null) {
+      this.$CAPACITY_USE$IO_SARL_CORE_LOGGING = $getSkill(Logging.class);
+    }
+    return $castSkill(Logging.class, this.$CAPACITY_USE$IO_SARL_CORE_LOGGING);
+  }
+  
   @SyntheticMember
   @PerceptGuardEvaluator
   private void $guardEvaluator$Initialize(final Initialize occurrence, final Collection<Runnable> ___SARLlocal_runnableCollection) {
@@ -68,18 +86,18 @@ public class Driver extends Agent {
   
   @SyntheticMember
   @PerceptGuardEvaluator
-  private void $guardEvaluator$Perception(final Perception occurrence, final Collection<Runnable> ___SARLlocal_runnableCollection) {
-    assert occurrence != null;
-    assert ___SARLlocal_runnableCollection != null;
-    ___SARLlocal_runnableCollection.add(() -> $behaviorUnit$Perception$2(occurrence));
-  }
-  
-  @SyntheticMember
-  @PerceptGuardEvaluator
   private void $guardEvaluator$CarAccident(final CarAccident occurrence, final Collection<Runnable> ___SARLlocal_runnableCollection) {
     assert occurrence != null;
     assert ___SARLlocal_runnableCollection != null;
     ___SARLlocal_runnableCollection.add(() -> $behaviorUnit$CarAccident$1(occurrence));
+  }
+  
+  @SyntheticMember
+  @PerceptGuardEvaluator
+  private void $guardEvaluator$ComputeInfluence(final ComputeInfluence occurrence, final Collection<Runnable> ___SARLlocal_runnableCollection) {
+    assert occurrence != null;
+    assert ___SARLlocal_runnableCollection != null;
+    ___SARLlocal_runnableCollection.add(() -> $behaviorUnit$ComputeInfluence$2(occurrence));
   }
   
   @Override

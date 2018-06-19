@@ -1,12 +1,13 @@
 /** 
  * 
  */
-package launch
+package environnement
 import io.sarl.core.Destroy
 import io.sarl.core.Initialize
 import io.sarl.core.Logging
 import io.sarl.core.Lifecycle
 import agents.Driver
+import UI.Layer
 /** 
  * @author User
  * 
@@ -15,12 +16,12 @@ import agents.Driver
 agent Launcher {
 	uses Logging
 	uses Lifecycle
-
+	var map : Layer
+	
 	on Initialize {
 		// Event trigger before the agent begin to live or to be used.
 		// You should put all the initialization statements in this block of code.
 		setLoggingName("Launcher")
-		info('Spawning a Car')
 		spawn(Driver)
 		killMe
 	}

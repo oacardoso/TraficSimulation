@@ -9,14 +9,14 @@ import io.sarl.lang.core.Event;
 @SarlSpecification("0.7")
 @SarlElementType(15)
 @SuppressWarnings("all")
-public class Perception extends Event {
+public class SendInfluence extends Event {
   @SyntheticMember
-  public Perception() {
+  public SendInfluence() {
     super();
   }
   
   @SyntheticMember
-  public Perception(final Address source) {
+  public SendInfluence(final Address source) {
     super(source);
   }
   
