@@ -9,5 +9,23 @@ package agents
  * 
  */
 class DriveWithoutConstraint {
-	
+	def run(maxacc : int, currentacc : int, currentspeed : int, speedlimit : int) : float {
+		
+		var acc : float
+		var accel : int
+		
+		if (currentspeed > speedlimit) /* too fast */
+			acc = currentacc * (speedlimit / currentspeed)
+		else 
+			if (currentspeed == speedlimit) /* already at max speed */
+				acc = currentacc
+			else
+				accel = currentacc * (speedlimit / currentspeed) /* can accelerate */
+				if (accel > maxacc) /* verifying if acceleration isnt too high */
+					acc = maxacc
+				else
+					acc = accel
+				
+				return acc;
+	}
 }
