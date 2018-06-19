@@ -1,5 +1,4 @@
-
-package traficWindow;
+package Java;
 
 import java.util.Collection;
 
