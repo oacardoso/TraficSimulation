@@ -4,21 +4,21 @@ import environnement.EnvironmentObjecAbstractStat;
 import io.sarl.lang.annotation.SarlElementType;
 import io.sarl.lang.annotation.SarlSpecification;
 import io.sarl.lang.annotation.SyntheticMember;
-import org.arakhne.afc.math.geometry.d2.Point2D;
+import org.arakhne.afc.math.geometry.d2.d.Point2d;
 import org.eclipse.xtext.xbase.lib.Pure;
 
 @SarlSpecification("0.7")
 @SarlElementType(10)
 @SuppressWarnings("all")
 public class Sign extends EnvironmentObjecAbstractStat {
-  private Point2D position;
+  private Point2d position;
   
   @Pure
-  public Point2D get_position() {
+  public Point2d get_position() {
     return this.position;
   }
   
-  public void set_position(final Point2D point) {
+  public void set_position(final Point2d point) {
     this.position = point;
   }
   

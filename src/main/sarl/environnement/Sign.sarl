@@ -1,15 +1,15 @@
 package environnement
 
-import org.arakhne.afc.math.geometry.d2.Point2D
+import org.arakhne.afc.math.geometry.d2.d.Point2d
 
 class Sign extends EnvironmentObjecAbstractStat {
 	
-	var position : Point2D
+	var position : Point2d
 	
-	def get_position():Point2D{
+	def get_position() : Point2d {
 		return this.position
 	}
-	def set_position(point : Point2D){
+	def set_position(point : Point2d) {
 		this.position = point
 	}
 }

@@ -42,18 +42,28 @@ public class SeparateRoadNetwork{
 	{
 		return this.stopPanel;
 	}
-	
-	public void VerifyNetwork() {
-		Collection<RoadSegment> map = (Collection<RoadSegment>) this.getMap();
-		for (RoadSegment seg : map) {
-			RoadConnection startpoint = seg.getBeginPoint();
-			if(!deadend.contains(seg) && (!threeCrossingRoad.contains(seg) && (!fourCrossingRoad.contains(seg)))) {
-				if(startpoint.isFinalConnectionPoint()) {
-					deadend.add(seg);
-				}
-			}
-		}
-		
+	private Collection<RoadSegment> getMap() {
+		return 0; // get map ?
 	}
 	
+	public void VerifyNetwork() {
+		Collection<RoadSegment> map = (Collection<RoadSegment>)this.getMap();
+		for (RoadSegment seg : map) {
+			RoadConnection startpoint = seg.getBeginPoint();
+			if(!deadend.contains(startpoint) && (!threeCrossingRoad.contains(startpoint) && (!fourCrossingRoad.contains(startpoint)))) {
+				if(startpoint.isReallyCulDeSac()) {
+					deadend.add(startpoint);
+			}
+				else // if connected segment count = 2, means its a normal road, so we don't care about it
+					if(startpoint.getConnectedSegmentCount()== 3) {
+						threeCrossingRoad.add(startpoint);
+					}
+						else
+							if(startpoint.getConnectedSegmentCount() == 4) {
+								fourCrossingRoad.add(startpoint);
+							}
+			}
+		}
+	}
+		
 }

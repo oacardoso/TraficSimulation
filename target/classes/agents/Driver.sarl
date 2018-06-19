@@ -11,7 +11,7 @@ import events.ComputeInfluence
 import environnement.EnvironmentObjecAbstractStat
 import java.util.ArrayList
 
-agent Driver {
+agent Driver {		
 	uses Lifecycle
 	uses Logging
 	
