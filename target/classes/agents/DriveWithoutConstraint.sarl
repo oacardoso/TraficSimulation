@@ -5,7 +5,7 @@ package agents
 
 
 /** 
- * @author User
+ * @author Olivier
  * 
  */
 class DriveWithoutConstraint {

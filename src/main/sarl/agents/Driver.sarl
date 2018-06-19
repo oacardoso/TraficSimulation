@@ -8,12 +8,12 @@ import io.sarl.core.Initialize
 import io.sarl.core.Lifecycle
 import events.CarAccident
 import events.Perception
-import environnement.EnvironmentObjecAbstract
+import environnement.EnvironmentObjecAbstractStat
 import java.util.ArrayList
 
 agent Driver {		
 	uses Lifecycle
-	var pecepts : ArrayList<EnvironmentObjecAbstract>
+	var pecepts : ArrayList<EnvironmentObjecAbstractStat>
 //	var seeking : new Conduitesansobstacle()
 	on Initialize {
 		

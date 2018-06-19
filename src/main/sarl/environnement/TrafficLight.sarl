@@ -8,6 +8,23 @@ import java.util.Timer
  * 
  */
 class TrafficLight extends Sign{
+	
 	var color : Color
 	var timer = new Timer()
+	
+	def get_color():Color{
+		return this.color
+	}
+
+	def set_color(color : Color) {
+		this.color = color
+	}
+
+	def get_timer() : Timer {
+		return this.timer
+	}
+
+	def set_timer(timer : Timer) {
+		this.timer = timer
+	}
 }

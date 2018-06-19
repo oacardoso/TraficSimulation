@@ -13,7 +13,7 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SarlSpecification("0.7")
 @SarlElementType(10)
 @SuppressWarnings("all")
-public class EnvironmentObjecAbstract {
+public class EnvironmentObjecAbstractStat {
   private float length;
   
   private float position;
@@ -25,17 +25,39 @@ public class EnvironmentObjecAbstract {
   private RoadSegment segment;
   
   @Pure
-  public float getLength() {
-    return this.length;
+  public UUID get_UID() {
+    return this.UID;
   }
   
-  public void setLength(final float x) {
-    this.length = x;
+  public void set_UID(final UUID UID) {
+    this.UID = UID;
   }
   
   @Pure
-  public float getPosition() {
+  public float get_Length() {
+    return this.length;
+  }
+  
+  public void set_Length(final float x) {
+    this.length = x;
+  }
+  
+  public void set_entryPoint(final RoadConnection Point) {
+    this.entryPoint = Point;
+  }
+  
+  @Pure
+  public RoadConnection get_entryPoint() {
+    return this.entryPoint;
+  }
+  
+  @Pure
+  public float get_Position() {
     return this.position;
+  }
+  
+  public void set_Position(final float pos) {
+    this.position = pos;
   }
   
   @Pure
@@ -53,7 +75,7 @@ public class EnvironmentObjecAbstract {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    EnvironmentObjecAbstract other = (EnvironmentObjecAbstract) obj;
+    EnvironmentObjecAbstractStat other = (EnvironmentObjecAbstractStat) obj;
     if (Float.floatToIntBits(other.length) != Float.floatToIntBits(this.length))
       return false;
     if (Float.floatToIntBits(other.position) != Float.floatToIntBits(this.position))
@@ -77,7 +99,7 @@ public class EnvironmentObjecAbstract {
   }
   
   @SyntheticMember
-  public EnvironmentObjecAbstract() {
+  public EnvironmentObjecAbstractStat() {
     super();
   }
 }

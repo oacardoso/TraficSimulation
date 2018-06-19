@@ -1,6 +1,6 @@
 package agents;
 
-import environnement.EnvironmentObjecAbstract;
+import environnement.EnvironmentObjecAbstractStat;
 import events.CarAccident;
 import events.Perception;
 import io.sarl.core.Initialize;
@@ -27,7 +27,7 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SarlElementType(18)
 @SuppressWarnings("all")
 public class Driver extends Agent {
-  private ArrayList<EnvironmentObjecAbstract> pecepts;
+  private ArrayList<EnvironmentObjecAbstractStat> pecepts;
   
   @SyntheticMember
   private void $behaviorUnit$Initialize$0(final Initialize occurrence) {

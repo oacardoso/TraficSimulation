@@ -8,6 +8,6 @@ package environnement
  * @author User
  * 
  */
-class EnvironmentObjecAbstractMob extends EnvironmentObjecAbstract {
+class EnvironmentObjecAbstractMob extends EnvironmentObjecAbstractStat {
 
 }

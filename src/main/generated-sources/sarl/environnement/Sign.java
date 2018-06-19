@@ -1,6 +1,6 @@
 package environnement;
 
-import environnement.EnvironmentObjecAbstract;
+import environnement.EnvironmentObjecAbstractStat;
 import io.sarl.lang.annotation.SarlElementType;
 import io.sarl.lang.annotation.SarlSpecification;
 import io.sarl.lang.annotation.SyntheticMember;
@@ -10,8 +10,17 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SarlSpecification("0.7")
 @SarlElementType(10)
 @SuppressWarnings("all")
-public class Sign extends EnvironmentObjecAbstract {
+public class Sign extends EnvironmentObjecAbstractStat {
   private Point2D position;
+  
+  @Pure
+  public Point2D get_position() {
+    return this.position;
+  }
+  
+  public void set_position(final Point2D point) {
+    this.position = point;
+  }
   
   @Override
   @Pure

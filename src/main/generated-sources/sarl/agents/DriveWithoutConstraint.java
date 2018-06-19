@@ -5,7 +5,7 @@ import io.sarl.lang.annotation.SarlSpecification;
 import io.sarl.lang.annotation.SyntheticMember;
 
 /**
- * @author User
+ * @author Olivier
  */
 @SarlSpecification("0.7")
 @SarlElementType(10)

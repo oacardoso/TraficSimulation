@@ -19,6 +19,24 @@ public class TrafficLight extends Sign {
   
   private Timer timer = new Timer();
   
+  @Pure
+  public Color get_color() {
+    return this.color;
+  }
+  
+  public void set_color(final Color color) {
+    this.color = color;
+  }
+  
+  @Pure
+  public Timer get_timer() {
+    return this.timer;
+  }
+  
+  public void set_timer(final Timer timer) {
+    this.timer = timer;
+  }
+  
   @Override
   @Pure
   @SyntheticMember
