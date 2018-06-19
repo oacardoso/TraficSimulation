@@ -11,12 +11,18 @@ import org.arakhne.afc.gis.maplayer.ArrayMapElementLayer
 import org.arakhne.afc.gis.mapelement.MapPolygon
 import org.arakhne.afc.gis.mapelement.MapElement
 import java.io.File
+<<<<<<< HEAD
 import ^Java.Layer
 import javafx.scene.layout.BorderPane
 import javafx.scene.Scene
 import java.util.ArrayList
 
 agent AppAgent {
+=======
+import Java.Layer
+
+agent ApplicationAgent {
+>>>>>>> master
 
 	uses Lifecycle
 	
@@ -81,10 +87,15 @@ class App extends javafx.application.Application {
 		stage.show();
 	}
 
+<<<<<<< HEAD
 	static def getInst() : App {
 		if (inst == null)
 			inst = new App
 		return inst;
+=======
+	def start(arg0 : Stage) {
+		
+>>>>>>> master
 	}
 
 }

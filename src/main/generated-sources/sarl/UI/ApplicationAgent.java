@@ -12,22 +12,22 @@ import javax.inject.Inject;
 @SarlSpecification("0.7")
 @SarlElementType(18)
 @SuppressWarnings("all")
-public class AppAgent extends Agent {
+public class ApplicationAgent extends Agent {
   @SyntheticMember
-  public AppAgent(final UUID parentID, final UUID agentID) {
+  public ApplicationAgent(final UUID parentID, final UUID agentID) {
     super(parentID, agentID);
   }
   
   @SyntheticMember
   @Inject
   @Deprecated
-  public AppAgent(final BuiltinCapacitiesProvider provider, final UUID parentID, final UUID agentID) {
+  public ApplicationAgent(final BuiltinCapacitiesProvider provider, final UUID parentID, final UUID agentID) {
     super(provider, parentID, agentID);
   }
   
   @SyntheticMember
   @Inject
-  public AppAgent(final UUID parentID, final UUID agentID, final DynamicSkillProvider skillProvider) {
+  public ApplicationAgent(final UUID parentID, final UUID agentID, final DynamicSkillProvider skillProvider) {
     super(parentID, agentID, skillProvider);
   }
 }

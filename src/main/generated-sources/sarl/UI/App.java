@@ -1,11 +1,9 @@
 package UI;
 
-import Java.Layer;
 import com.google.common.base.Objects;
 import io.sarl.lang.annotation.SarlElementType;
 import io.sarl.lang.annotation.SarlSpecification;
 import io.sarl.lang.annotation.SyntheticMember;
-import java.io.File;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -41,8 +39,8 @@ public class App extends Application {
   }
   
   public void init() {
-    File _file = new File("src/main/sarl/UI/Quartier.shp");
-    this.roadNetworkLayer = Layer.loadShapeFile(_file);
+    throw new Error("Unresolved compilation problems:"
+      + "\nFile cannot be resolved.");
   }
   
   public void start(final Stage stage) {
@@ -78,39 +76,20 @@ public class App extends Application {
     stage.show();
   }
   
-  @Pure
-  public static App getInst() {
-    boolean _equals = Objects.equal(App.inst, null);
-    if (_equals) {
-      App _app = new App();
-      App.inst = _app;
-    }
-    return App.inst;
-  }
-  
   @Override
   @Pure
   @SyntheticMember
   public boolean equals(final Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    App other = (App) obj;
-    if (other.isReady != this.isReady)
-      return false;
-    return super.equals(obj);
+    throw new Error("Unresolved compilation problems:"
+      + "\nmismatched input \'<\' expecting \'}\'"
+      + "\nmismatched input \'<\' expecting \'}\'");
   }
   
   @Override
   @Pure
   @SyntheticMember
   public int hashCode() {
-    int result = super.hashCode();
-    final int prime = 31;
-    result = prime * result + (this.isReady ? 1231 : 1237);
-    return result;
+    throw new Error("Unresolved compilation problems:"
+      + "\nmismatched input \'<\' expecting \'}\'");
   }
 }
