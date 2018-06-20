@@ -2,20 +2,27 @@
 package objects;
 
 import org.arakhne.afc.gis.road.primitive.RoadConnection;
-import org.arakhne.afc.math.geometry.d2.d.Point2d;
 import org.arakhne.afc.gis.road.primitive.RoadSegment;
+//import org.arakhne.afc.gis.road.primitive.RoadNetwork;
+import org.arakhne.afc.gis.road.StandardRoadNetwork;
 import environnement.TrafficLight;
 import environnement.StopPanel;
 import java.util.ArrayList;
 import java.util.Collection;
+import org.arakhne.afc.math.geometry.d2.afp.Rectangle2afp;
+
 
 /** 
  * @author Matt
  * 
  */
  
-public class SeparateRoadNetwork{
+public class SeparateRoadNetwork extends StandardRoadNetwork{
 
+	public SeparateRoadNetwork(Rectangle2afp<?,?,?,?,?,?> originalBounds) {
+		super(originalBounds);
+	}
+	
 	private ArrayList<RoadConnection> deadend = new ArrayList<RoadConnection>();
 	private ArrayList<RoadConnection> threeCrossingRoad = new ArrayList<RoadConnection>();
 	private ArrayList<RoadConnection> fourCrossingRoad = new ArrayList<RoadConnection>();
@@ -42,14 +49,11 @@ public class SeparateRoadNetwork{
 	{
 		return this.stopPanel;
 	}
-	private Collection<RoadSegment> getMap() {
-		return 0; // get map ?
-	}
 	
 	public void VerifyNetwork() {
-		Collection<RoadSegment> map = (Collection<RoadSegment>)this.getMap();
-		for (RoadSegment seg : map) {
-			RoadConnection startpoint = seg.getBeginPoint();
+		Collection<RoadSegment> map = (Collection<RoadSegment>)this.getRoadSegments();
+		for (RoadSegment roadseg : map) {
+			RoadConnection startpoint = roadseg.getBeginPoint();
 			if(!deadend.contains(startpoint) && (!threeCrossingRoad.contains(startpoint) && (!fourCrossingRoad.contains(startpoint)))) {
 				if(startpoint.isReallyCulDeSac()) {
 					deadend.add(startpoint);
