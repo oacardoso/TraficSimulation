@@ -1,5 +1,6 @@
 package agents;
 
+import environnement.Influence;
 import io.sarl.lang.annotation.DefaultValue;
 import io.sarl.lang.annotation.DefaultValueSource;
 import io.sarl.lang.annotation.DefaultValueUse;
@@ -16,38 +17,38 @@ import math.Vector2f;
 @SuppressWarnings("all")
 public interface Movement extends Capacity {
   @DefaultValueSource
-  public abstract void influenceKinematic(@DefaultValue("agents.Movement#INFLUENCEKINEMATIC_0") final Vector2f linearInfluence, @DefaultValue("agents.Movement#INFLUENCEKINEMATIC_1") final float angularInfluence);
+  public abstract void influenceSteering(@DefaultValue("agents.Movement#INFLUENCESTEERING_0") final Vector2f linearInfluence, @DefaultValue("agents.Movement#INFLUENCESTEERING_1") final float angularInfluence, final Influence... otherInfluences);
   
   /**
    * Default value for the parameter linearInfluence
    */
   @SyntheticMember
   @SarlSourceCode("null")
-  public final static Vector2f $DEFAULT_VALUE$INFLUENCEKINEMATIC_0 = null;
+  public final static Vector2f $DEFAULT_VALUE$INFLUENCESTEERING_0 = null;
   
   /**
    * Default value for the parameter angularInfluence
    */
   @SyntheticMember
   @SarlSourceCode("0f")
-  public final static float $DEFAULT_VALUE$INFLUENCEKINEMATIC_1 = 0f;
+  public final static float $DEFAULT_VALUE$INFLUENCESTEERING_1 = 0f;
   
-  @DefaultValueUse("math.Vector2f,float")
+  @DefaultValueUse("math.Vector2f,float,environnement.Influence*")
   @SyntheticMember
-  public default void influenceKinematic() {
-    influenceKinematic($DEFAULT_VALUE$INFLUENCEKINEMATIC_0, $DEFAULT_VALUE$INFLUENCEKINEMATIC_1);
+  public default void influenceSteering(final Influence... otherInfluences) {
+    influenceSteering($DEFAULT_VALUE$INFLUENCESTEERING_0, $DEFAULT_VALUE$INFLUENCESTEERING_1, otherInfluences);
   }
   
-  @DefaultValueUse("math.Vector2f,float")
+  @DefaultValueUse("math.Vector2f,float,environnement.Influence*")
   @SyntheticMember
-  public default void influenceKinematic(final float angularInfluence) {
-    influenceKinematic($DEFAULT_VALUE$INFLUENCEKINEMATIC_0, angularInfluence);
+  public default void influenceSteering(final float angularInfluence, final Influence... otherInfluences) {
+    influenceSteering($DEFAULT_VALUE$INFLUENCESTEERING_0, angularInfluence, otherInfluences);
   }
   
-  @DefaultValueUse("math.Vector2f,float")
+  @DefaultValueUse("math.Vector2f,float,environnement.Influence*")
   @SyntheticMember
-  public default void influenceKinematic(final Vector2f linearInfluence) {
-    influenceKinematic(linearInfluence, $DEFAULT_VALUE$INFLUENCEKINEMATIC_1);
+  public default void influenceSteering(final Vector2f linearInfluence, final Influence... otherInfluences) {
+    influenceSteering(linearInfluence, $DEFAULT_VALUE$INFLUENCESTEERING_1, otherInfluences);
   }
   
   /**
@@ -58,37 +59,37 @@ public interface Movement extends Capacity {
       super(capacity, caller);
     }
     
-    public void influenceKinematic(final Vector2f linearInfluence, final float angularInfluence) {
+    public void influenceSteering(final Vector2f linearInfluence, final float angularInfluence, final Influence... otherInfluences) {
       try {
         ensureCallerInLocalThread();
-        this.capacity.influenceKinematic(linearInfluence, angularInfluence);
+        this.capacity.influenceSteering(linearInfluence, angularInfluence, otherInfluences);
       } finally {
         resetCallerInLocalThread();
       }
     }
     
-    public void influenceKinematic() {
+    public void influenceSteering(final Influence... otherInfluences) {
       try {
         ensureCallerInLocalThread();
-        this.capacity.influenceKinematic();
+        this.capacity.influenceSteering(otherInfluences);
       } finally {
         resetCallerInLocalThread();
       }
     }
     
-    public void influenceKinematic(final float angularInfluence) {
+    public void influenceSteering(final float angularInfluence, final Influence... otherInfluences) {
       try {
         ensureCallerInLocalThread();
-        this.capacity.influenceKinematic(angularInfluence);
+        this.capacity.influenceSteering(angularInfluence, otherInfluences);
       } finally {
         resetCallerInLocalThread();
       }
     }
     
-    public void influenceKinematic(final Vector2f linearInfluence) {
+    public void influenceSteering(final Vector2f linearInfluence, final Influence... otherInfluences) {
       try {
         ensureCallerInLocalThread();
-        this.capacity.influenceKinematic(linearInfluence);
+        this.capacity.influenceSteering(linearInfluence, otherInfluences);
       } finally {
         resetCallerInLocalThread();
       }

@@ -1,0 +1,47 @@
+package environnement
+
+import java.io.Serializable
+import java.util.UUID
+
+/** 
+ * Abstract implementation of an influence.
+ * 
+ */
+abstract class Influence implements Serializable {
+
+	var emitter : UUID
+	val influencedObject : UUID 
+	
+	/** 
+	 * @param influencedObject is the influenced object.
+	 */
+	protected new (influencedObject : UUID) {
+		this.influencedObject = influencedObject
+	}
+	
+	/** Replies the emitter of the influence.
+	 * 
+	 * @return the emitter of the influence.
+	 */
+	def getEmitter : UUID {
+		this.emitter
+	}
+	
+	/** Set the emitter of the influence.
+	 * 
+	 * @param emitter is the emitter of the influence.
+	 */
+	package def setEmitter(emitter : UUID) {
+		assert emitter !== null
+		this.emitter = emitter
+	}
+
+	/** Replies the influenced object.
+	 * 
+	 * @return the influenced object.
+	 */
+	def getInfluencedObject : UUID {
+		this.influencedObject
+	}
+	
+}

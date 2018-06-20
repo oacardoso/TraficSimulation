@@ -1,0 +1,12 @@
+package environnement
+
+public class KillInfluence extends Influence {
+
+			/** 
+		 * @param agent the identifier of the agent to kill.
+		 */
+	new {
+		super(null)
+	}
+	
+}

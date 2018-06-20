@@ -1,0 +1,78 @@
+package environnement
+
+import java.util.UUID
+
+import math.Vector2f
+
+/** 
+ * Abstract implementation of a motion influence.
+ * 
+ */
+class MotionInfluence extends Influence {
+
+	val linearInfluence = new Vector2f
+	var angularInfluence : float
+
+	/** 
+	 * @param type indicates if the influence is kinematic or steering.
+	 * @param influencedObject is the influenced object.
+	 * @param linearInfluence is the linear influence to apply on the object.
+	 * @param angularInfluence is the angular influence to apply on the object.
+	 */
+	new (influencedObject : UUID = null, linearInfluence : Vector2f = null,
+		angularInfluence : float = 0) {
+		super(influencedObject)
+		if (linearInfluence !== null) {
+			this.linearInfluence.set(linearInfluence)
+		}
+		this.angularInfluence = angularInfluence
+	}
+
+	/** Set the linear influence.
+	 * 
+	 * @param l is the linear influence
+	 */
+	def setLinarInfluence(l : Vector2f) {
+		assert l !== null
+		this.linearInfluence.set(l)
+	}
+		
+	/** Set the linear influence.
+	 * 
+	 * @param dx is the linear influence
+	 * @param dy is the linear influence
+	 */
+	def setLinarInfluence(dx : float, dy : float) {
+		this.linearInfluence.set(dx, dy)
+	}
+
+	/** Set the angular influence.
+	 * 
+	 * @param a
+	 */
+	def setAngularInfluence(a : float) {
+		this.angularInfluence = a
+	}
+
+	/** Replies the linear influence.
+	 * 
+	 * @return the linear influence
+	 */
+	def getLinearInfluence : Vector2f {
+		this.linearInfluence
+	}
+		
+	/** Replies the angular influence.
+	 * 
+	 * @return the angular influence
+	 */
+	def getAngularInfluence : float {
+		this.angularInfluence
+	}
+	
+
+	override toString : String {
+		this.linearInfluence + "|" + this.angularInfluence
+	}
+
+}

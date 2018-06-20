@@ -1,9 +1,10 @@
 package agents
 
 import math.Vector2f
+import environnement.Influence
 
 capacity Movement {
 
-	def influenceKinematic(linearInfluence : Vector2f = null, angularInfluence : float = 0f)
-	
+	def influenceSteering(linearInfluence : Vector2f = null, angularInfluence : float = 0f,
+		otherInfluences : Influence*)
 }
