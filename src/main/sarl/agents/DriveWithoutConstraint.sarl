@@ -9,7 +9,8 @@ package agents
  * 
  */
  
-class DriveWithoutConstraint {
+behavior DriveWithoutConstraint {
+	
 	def run(maxacc : float, currentacc : float, currentspeed : int, speedlimit : int) : float {
 		
 		var acc : float
