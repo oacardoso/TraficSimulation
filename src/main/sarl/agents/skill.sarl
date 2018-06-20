@@ -11,7 +11,7 @@ import java.lang.reflect.Array
 import io.sarl.lang.core.Address
 import io.sarl.util.OpenEventSpace
 import java.util.UUID
-
+import environnement.InfluenceEvent
 
 skill standardMovement implements Movement {
 
