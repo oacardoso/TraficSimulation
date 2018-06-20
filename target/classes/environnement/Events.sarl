@@ -1,5 +1,7 @@
 package environnement
 
+import java.util.List
+
 /*
  * A car accident happends
  */
@@ -9,4 +11,10 @@ event ComputeInfluence
 
 event SendInfluence
 
-event InfluenceEvent
+event InfluenceEvent {
+	val influences : List<Influence>
+
+	new (e : Influence*) {
+		this.influences = e
+	}
+}
