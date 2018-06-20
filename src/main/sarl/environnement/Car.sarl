@@ -10,16 +10,8 @@ import javafx.scene.paint.Color;
  * @author User
  * 
  */
-class Car extends EnvironmentObjecAbstractMob{
+interface Car {
 
-	var color : Color
 
-	def get_Color() {
-		return this.color
-	}
-
-	def set_Color(x : Color) {
-		this.color = x
-	}
 	
 }

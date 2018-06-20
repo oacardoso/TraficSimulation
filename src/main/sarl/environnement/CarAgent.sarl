@@ -3,6 +3,7 @@
  */
 package environnement
 
+import javafx.scene.paint.Color
 
 /** 
  * @author User
@@ -10,4 +11,13 @@ package environnement
  */
 class CarAgent extends EnvironmentObjecAbstractMob implements Car {
 
+	var color : Color
+
+	def get_Color() {
+		return this.color
+	}
+
+	def set_Color(x : Color) {
+		this.color = x
+	}
 }
