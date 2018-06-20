@@ -6,8 +6,8 @@ package agents
 import io.sarl.core.Initialize
 import io.sarl.core.Logging
 import io.sarl.core.Lifecycle
-import events.CarAccident
-import events.ComputeInfluence
+import environnement.CarAccident
+import environnement.ComputeInfluence
 import environnement.EnvironmentObjecAbstractStat
 import java.util.ArrayList
 

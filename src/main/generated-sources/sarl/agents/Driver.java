@@ -1,8 +1,8 @@
 package agents;
 
+import environnement.CarAccident;
+import environnement.ComputeInfluence;
 import environnement.EnvironmentObjecAbstractStat;
-import events.CarAccident;
-import events.ComputeInfluence;
 import io.sarl.core.Initialize;
 import io.sarl.core.Lifecycle;
 import io.sarl.core.Logging;

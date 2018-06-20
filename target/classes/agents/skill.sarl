@@ -2,13 +2,14 @@ package agents
 
 import io.sarl.core.DefaultContextInteractions
 import io.sarl.core.Behaviors
+import math.Vector2f
 
 skill standardMovement implements Movement {
 
 	uses DefaultContextInteractions, Behaviors
 
-	def influenceKinematic(linearInfluence : Vector2f = null, angularInfluence : float = 0f,
-		otherInfluences : Influence*) {
+	def influenceKinematic(linearInfluence : Vector2f = null, angularInfluence : float = 0f, otherInfluences : Influence*) 
+	{
 		var mi : MotionInfluence
 		if (linearInfluence === null) {
 			mi = new MotionInfluence(DynamicType::KINEMATIC, angularInfluence)

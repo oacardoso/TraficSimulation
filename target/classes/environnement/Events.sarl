@@ -1,4 +1,4 @@
-package events
+package environnement
 
 /*
  * A car accident happends
@@ -8,3 +8,5 @@ event CarAccident
 event ComputeInfluence
 
 event SendInfluence
+
+event InfluenceEvent

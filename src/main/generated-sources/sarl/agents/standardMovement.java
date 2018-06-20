@@ -14,6 +14,7 @@ import io.sarl.lang.annotation.SyntheticMember;
 import io.sarl.lang.core.Agent;
 import io.sarl.lang.core.Skill;
 import io.sarl.lang.util.ClearableReference;
+import math.Vector2f;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Inline;
 import org.eclipse.xtext.xbase.lib.Pure;
@@ -23,7 +24,7 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SuppressWarnings("all")
 public class standardMovement extends Skill implements Movement {
   @DefaultValueSource
-  public Object influenceKinematic(@DefaultValue("agents.standardMovement#INFLUENCEKINEMATIC_0") final /* Vector2f */Object linearInfluence, @DefaultValue("agents.standardMovement#INFLUENCEKINEMATIC_1") final float angularInfluence, final /* Influence */Object... otherInfluences) {
+  public Object influenceKinematic(@DefaultValue("agents.standardMovement#INFLUENCEKINEMATIC_0") final Vector2f linearInfluence, @DefaultValue("agents.standardMovement#INFLUENCEKINEMATIC_1") final float angularInfluence, final /* Influence */Object... otherInfluences) {
     throw new Error("Unresolved compilation problems:"
       + "\nMotionInfluence cannot be resolved to a type."
       + "\nMotionInfluence cannot be resolved."
@@ -31,7 +32,6 @@ public class standardMovement extends Skill implements Movement {
       + "\nMotionInfluence cannot be resolved."
       + "\nDynamicType cannot be resolved to a type."
       + "\nThe method emitInfluences(MotionInfluence, Influence[]) is undefined"
-      + "\n=== cannot be resolved"
       + "\nKINEMATIC cannot be resolved"
       + "\nKINEMATIC cannot be resolved");
   }
@@ -80,23 +80,22 @@ public class standardMovement extends Skill implements Movement {
     return $castSkill(Behaviors.class, this.$CAPACITY_USE$IO_SARL_CORE_BEHAVIORS);
   }
   
-  @DefaultValueUse("void,float,void*")
+  @DefaultValueUse("math.Vector2f,float,void*")
   @SyntheticMember
   public final Object influenceKinematic(final /* Influence */Object... otherInfluences) {
     return influenceKinematic($DEFAULT_VALUE$INFLUENCEKINEMATIC_0, $DEFAULT_VALUE$INFLUENCEKINEMATIC_1, otherInfluences);
   }
   
-  @DefaultValueUse("void,float,void*")
+  @DefaultValueUse("math.Vector2f,float,void*")
   @SyntheticMember
   public final Object influenceKinematic(final float angularInfluence, final /* Influence */Object... otherInfluences) {
     return influenceKinematic($DEFAULT_VALUE$INFLUENCEKINEMATIC_0, angularInfluence, otherInfluences);
   }
   
-  @DefaultValueUse("void,float,void*")
+  @DefaultValueUse("math.Vector2f,float,void*")
   @SyntheticMember
-  public final Object influenceKinematic(final /* Vector2f */Object linearInfluence, final /* Influence */Object... otherInfluences) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nVector2f cannot be resolved to a type.");
+  public final Object influenceKinematic(final Vector2f linearInfluence, final /* Influence */Object... otherInfluences) {
+    return influenceKinematic(linearInfluence, $DEFAULT_VALUE$INFLUENCEKINEMATIC_1, otherInfluences);
   }
   
   @SyntheticMember
