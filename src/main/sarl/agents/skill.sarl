@@ -1,0 +1,21 @@
+package agents
+
+import io.sarl.core.DefaultContextInteractions
+import io.sarl.core.Behaviors
+
+skill standardMovement implements Movement {
+
+	uses DefaultContextInteractions, Behaviors
+
+	def influenceKinematic(linearInfluence : Vector2f = null, angularInfluence : float = 0f,
+		otherInfluences : Influence*) {
+		var mi : MotionInfluence
+		if (linearInfluence === null) {
+			mi = new MotionInfluence(DynamicType::KINEMATIC, angularInfluence)
+		} else {
+			mi = new MotionInfluence(DynamicType::KINEMATIC, linearInfluence, angularInfluence)
+		}
+		emitInfluences(mi, otherInfluences)
+	}
+	
+}

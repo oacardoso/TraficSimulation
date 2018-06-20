@@ -1,0 +1,9 @@
+package agents
+
+import math.Vector2f
+
+capacity Movement {
+
+	def influenceKinematic(linearInfluence : Vector2f = null, angularInfluence : float = 0f)
+	
+}
